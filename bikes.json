@@ -1,0 +1,102 @@
+[
+  {
+    "bikeId": "B001",
+    "model": "City Bike",
+    "color": "Rot",
+    "prices": {
+      "hourly": 5,
+      "daily": 25
+    },
+    "availability": "available"
+  },
+  {
+    "bikeId": "B002",
+    "model": "City Bike",
+    "color": "Blau",
+    "prices": {
+      "hourly": 5,
+      "daily": 25
+    },
+    "availability": "rented"
+  },
+  {
+    "bikeId": "B003",
+    "model": "Mountain Bike",
+    "color": "Schwarz",
+    "prices": {
+      "hourly": 8,
+      "daily": 40
+    },
+    "availability": "available"
+  },
+  {
+    "bikeId": "B004",
+    "model": "Mountain Bike",
+    "color": "Grün",
+    "prices": {
+      "hourly": 8,
+      "daily": 40
+    },
+    "availability": "reserved"
+  },
+  {
+    "bikeId": "B005",
+    "model": "E-Bike",
+    "color": "Weiß",
+    "prices": {
+      "hourly": 10,
+      "daily": 55
+    },
+    "availability": "available"
+  },
+  {
+    "bikeId": "B006",
+    "model": "E-Bike",
+    "color": "Silber",
+    "prices": {
+      "hourly": 10,
+      "daily": 55
+    },
+    "availability": "rented"
+  },
+  {
+    "bikeId": "B007",
+    "model": "Touring Bike",
+    "color": "Gelb",
+    "prices": {
+      "hourly": 7,
+      "daily": 35
+    },
+    "availability": "available"
+  },
+  {
+    "bikeId": "B008",
+    "model": "Folding Bike",
+    "color": "Orange",
+    "prices": {
+      "hourly": 6,
+      "daily": 30
+    },
+    "availability": "maintenance"
+  },
+  {
+    "bikeId": "B009",
+    "model": "City Bike",
+    "color": "Türkis",
+    "prices": {
+      "hourly": 5,
+      "daily": 25
+    },
+    "availability": "available"
+  },
+  {
+    "bikeId": "B010",
+    "model": "Cargo Bike",
+    "color": "Dunkelblau",
+    "prices": {
+      "hourly": 12,
+      "daily": 65
+    },
+    "availability": "reserved"
+  }
+]
