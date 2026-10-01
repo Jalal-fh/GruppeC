@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f5f7f3" />
+  <title>nah. — Gute Begegnungen beginnen hier.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="dating-app.js" defer></script>
+</head>
+<body>
+  <div class="app-shell hidden" id="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#discover" data-page="discover" aria-label="nah. Startseite"><span class="brand-mark">n.</span><span>nah<span class="brand-period">.</span></span></a>
+      <p class="nav-label">DEIN BEREICH</p>
+      <nav class="main-nav" aria-label="Hauptnavigation">
+        <button class="nav-link active" data-page="discover"><span class="nav-icon">✳</span>Entdecken</button>
+        <button class="nav-link" data-page="matches"><span class="nav-icon">♡</span>Matches<span class="nav-count hidden" id="match-nav-count">0</span></button>
+        <button class="nav-link" data-page="chat"><span class="nav-icon">▱</span>Nachrichten</button>
+        <button class="nav-link" data-page="profile"><span class="nav-icon">◉</span>Mein Profil</button>
+      </nav>
+      <div class="sidebar-bottom"><div class="sidebar-user"><span class="avatar-initial" id="sidebar-user-avatar">A</span><span><strong id="sidebar-user-name">Alex</strong><small>Dein Bereich</small></span><button class="more-button" data-action="logout" title="Abmelden" aria-label="Abmelden">···</button></div><button class="demo-link" id="auth-open">Konto wechseln</button></div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar"><div><p class="eyebrow" id="today-label">GUTE BEGEGNUNGEN</p><h1 id="page-title">Gute Begegnungen beginnen hier.</h1><p class="page-subtitle" id="page-subtitle">Jemand, der zu dir passt, ist näher als du denkst.</p></div><div class="topbar-right"><span class="location-chip"><span class="location-dot"></span> Berlin, Deutschland</span><button class="top-avatar" data-page="profile" id="top-avatar" aria-label="Profil öffnen">A</button></div></header>
+
+      <section class="page-view active" id="view-discover"><div class="discover-toolbar"><div><h2>Für dich entdeckt <span class="sparkle">✳</span></h2><p id="discover-count">Menschen, die deine Interessen teilen</p></div><button class="filter-toggle" data-action="toggle-filters"><span>☷</span> Filter</button></div>
+        <form class="filter-bar hidden" id="filter-form"><label>Alter von<input name="minAge" type="number" min="18" max="99" value="18" /></label><label>bis<input name="maxAge" type="number" min="18" max="99" value="45" /></label><label>Interesse<select name="interest"><option value="">Alle Interessen</option><option>Kaffee</option><option>Reisen</option><option>Kunst</option><option>Musik</option><option>Kochen</option><option>Kino</option><option>Natur</option><option>Bücher</option><option>Laufen</option><option>Architektur</option><option>Fotografie</option></select></label><button class="filter-apply">Anwenden</button></form>
+        <div id="discover-content"></div>
+      </section>
+      <section class="page-view" id="view-matches"><div id="matches-content"></div></section>
+      <section class="page-view" id="view-chat"><div class="chat-layout"><aside class="chat-sidebar"><div class="chat-sidebar-head"><h2>Nachrichten</h2><span class="tiny-count" id="favorite-nav-count">0</span></div><label class="chat-search">⌕<input id="chat-search" placeholder="Suchen" aria-label="Chats durchsuchen" /></label><div class="chat-contact-list" id="chat-list"></div></aside><div class="chat-room" id="chat-room"></div></div></section>
+      <section class="page-view" id="view-profile"><div class="profile-layout"><section class="profile-preview"><div class="profile-cover"><span class="profile-monogram" id="profile-monogram">A</span></div><div class="profile-preview-content"><p class="eyebrow">DEIN PROFIL</p><h2 id="profile-name">Alex</h2><p class="profile-location" id="profile-location">28 Jahre · Berlin</p><p class="profile-bio" id="profile-bio"></p><div class="tag-list" id="profile-interests"></div></div></section><section class="profile-editor"><p class="eyebrow">PERSÖNLICHES</p><h2>Profil bearbeiten</h2><div id="profile-editor"></div></section></div></section>
+      <footer class="main-footer"><span>nah. <span class="brand-period">●</span> Für echte Begegnungen.</span><span>Deine Daten bleiben auf diesem Gerät.</span></footer>
+    </main>
+  </div>
+
+  <dialog class="auth-dialog" id="auth-dialog"><div class="auth-art"><span class="auth-graphic-dot"></span><span class="auth-orbit">n.</span><div><span class="auth-kicker">GUTE GESPRÄCHE. ECHTE NÄHE.</span><h2>Ein bisschen<br/>näher dran.</h2><p>Weniger swipen. Mehr begegnen.</p></div><span class="auth-art-caption">BERLIN · SEIT HEUTE</span></div><div class="auth-form-side"><div class="auth-wordmark">nah<span>.</span></div><button class="dialog-close" id="auth-close" aria-label="Schließen">×</button><p class="eyebrow">DEIN NÄCHSTES KAPITEL</p><h1 id="auth-title">Dein Anfang beginnt hier.</h1><p id="auth-copy" class="auth-copy"></p><form id="auth-form" data-mode="register"><label>E-Mail-Adresse<input name="email" type="email" placeholder="du@beispiel.de" autocomplete="email" required /></label><label>Passwort<input name="password" type="password" placeholder="Mindestens 8 Zeichen" minlength="8" autocomplete="new-password" required /></label><button class="primary-button" id="auth-submit">Konto erstellen</button></form><p class="auth-switch-row"><span id="auth-switch-copy">Du bist schon dabei?</span> <button id="auth-switch">Anmelden</button></p><div class="auth-divider"><span>ODER</span></div><button class="demo-button" id="demo-button">Erst einmal umsehen <span>→</span></button><p class="privacy-note">Konten und Nachrichten werden verschlüsselt auf diesem Gerät gespeichert.</p></div></dialog>
+    <dialog class="auth-dialog" id="auth-dialog"><div class="auth-art"><span class="auth-graphic-dot"></span><span class="auth-orbit">n.</span><div><span class="auth-kicker">GUTE GESPRÄCHE. ECHTE NÄHE.</span><h2>Ein bisschen<br/>näher dran.</h2><p>Weniger swipen. Mehr begegnen.</p></div><span class="auth-art-caption">BERLIN · SEIT HEUTE</span></div><div class="auth-form-side"><div class="auth-wordmark">nah<span>.</span></div><button class="dialog-close" id="auth-close" aria-label="Schließen">×</button><p class="eyebrow">DEIN NÄCHSTES KAPITEL</p><h1 id="auth-title">Dein Anfang beginnt hier.</h1><p id="auth-copy" class="auth-copy"></p><form id="auth-form" data-mode="register"><label>E-Mail-Adresse<input name="email" type="email" placeholder="du@beispiel.de" autocomplete="email" required /></label><label>Passwort<input name="password" type="password" placeholder="Mindestens 8 Zeichen" minlength="8" autocomplete="new-password" required /></label><button class="primary-button" id="auth-submit">Konto erstellen</button></form><p class="auth-switch-row"><span id="auth-switch-copy">Du bist schon dabei?</span> <button id="auth-switch">Anmelden</button></p><div class="auth-divider"><span>ODER</span></div><button class="demo-button" id="demo-button">Erst einmal umsehen <span>→</span></button><p class="privacy-note">Private Nachrichten sind mit deinem Kontopasswort verschlüsselt. Daten bleiben lokal.</p></div></dialog>
+
+  <dialog class="call-dialog" id="call-dialog"><div class="call-head"><span class="call-status-dot"></span><div><strong id="call-person-name">Dein Match</strong><span id="call-mode-label">Videoanruf</span></div><span class="call-timer" id="call-timer">00:00</span></div><div class="call-stage"><video id="call-video" autoplay muted playsinline></video><div class="audio-wave">♫</div><p id="call-status">Verbinde …</p></div><p class="call-notice" id="call-notice"></p><div class="call-controls"><button class="call-control" id="call-mic" aria-label="Mikrofon stummschalten" title="Mikrofon stummschalten">♩</button><button class="call-control end-call" id="call-end" aria-label="Anruf beenden" title="Anruf beenden">×</button></div></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
